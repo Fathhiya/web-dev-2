@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holidae — Book Your Trip</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="booking">
+
+<div id="loader">
+  <div class="loader-logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </div>
+  <div class="loader-bar"></div>
+</div>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html">Packages</a>
+    <a href="booking.html" class="active">Book Now</a>
+    <a href="#" onclick="logout(); return false;">Sign Out</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="packages.html">Packages</a>
+  <a href="booking.html">Book Now</a>
+  <a href="#" onclick="logout(); return false;">Sign Out</a>
+</div>
+
+<div class="booking-layout" style="padding: 130px 5% 80px; max-width: 1200px; margin: 0 auto;">
+
+  <div class="booking-form-section">
+
+    <div class="steps-bar reveal">
+      <div class="step active">
+        <div class="step-dot">1</div>
+        <span class="step-label">Details</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <span class="step-label">Review</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <span class="step-label">Confirm</span>
+      </div>
+    </div>
+
+    <div class="section-label reveal">Your Journey</div>
+    <h1 class="section-title reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 40px;">
+      Let's Plan <em>Your</em><br>Perfect Trip
+    </h1>
+
+    <form id="booking-form" novalidate>
+
+      <div style="margin-bottom: 32px;" class="reveal reveal-delay-1">
+        <p style="font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Select Package</p>
+        <div class="pkg-selector">
+          <div class="pkg-option" data-cat="summer" data-name="Summer Escape" data-price="1299">
+            <div class="pkg-option-icon"></div>
+            <div class="pkg-option-name">Summer</div>
+            <div class="pkg-option-price">from $1,299</div>
+          </div>
+          <div class="pkg-option" data-cat="winter" data-name="Winter Wonder" data-price="1899">
+            <div class="pkg-option-icon"></div>
+            <div class="pkg-option-name">Winter</div>
+            <div class="pkg-option-price">from $1,899</div>
+          </div>
+          <div class="pkg-option" data-cat="adventure" data-name="Adventure Quest" data-price="2199">
+            <div class="pkg-option-icon"></div>
+            <div class="pkg-option-name">Adventure</div>
+            <div class="pkg-option-price">from $2,199</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-field reveal reveal-delay-2">
+        <input type="text" id="full-name" name="full-name" placeholder=" " autocomplete="name" required />
+        <label for="full-name">Full Name</label>
+      </div>
+
+      <div class="form-field reveal reveal-delay-2">
+        <select id="destination" name="destination" required>
+          <option value="" disabled selected></option>
+          <optgroup label=" Summer">
+            <option value="Maldives">Maldives, Indian Ocean</option>
+            <option value="Santorini">Santorini, Greece</option>
+            <option value="Bali">Bali, Indonesia</option>
+            <option value="Amalfi Coast">Amalfi Coast, Italy</option>
+            <option value="Tulum">Tulum, Mexico</option>
+          </optgroup>
+          <optgroup label=" Winter">
+            <option value="Iceland">Iceland, Northern Europe</option>
+            <option value="Swiss Alps">Swiss Alps, Switzerland</option>
+            <option value="Lapland">Lapland, Finland</option>
+            <option value="Banff">Banff, Canada</option>
+          </optgroup>
+          <optgroup label=" Adventure">
+            <option value="Patagonia">Patagonia, Chile/Argentina</option>
+            <option value="Sahara Desert">Sahara Desert, Morocco</option>
+            <option value="Nepal">Nepal, Himalayas</option>
+            <option value="New Zealand">New Zealand, Fiordland</option>
+          </optgroup>
+        </select>
+        <label for="destination">Choose Destination</label>
+      </div>
+
+      <div class="form-field reveal reveal-delay-3">
+        <input type="date" id="travel-date" name="travel-date" placeholder=" " required />
+        <label for="travel-date">Departure Date</label>
+      </div>
+
+      <div class="form-field reveal reveal-delay-3">
+        <input type="date" id="return-date" name="return-date" placeholder=" " />
+        <label for="return-date">Return Date (optional)</label>
+      </div>
+
+      <div style="margin-bottom: 24px;" class="reveal reveal-delay-4">
+        <p style="font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Travellers</p>
+        <div class="guests-counter">
+          <button type="button" class="guests-btn" id="guests-minus">−</button>
+          <span class="guests-count" id="guests-count">2</span>
+          <button type="button" class="guests-btn" id="guests-plus">+</button>
+          <span class="guests-label">Travellers selected</span>
+        </div>
+      </div>
+
+      <div class="form-field textarea reveal reveal-delay-4">
+        <textarea id="requests" name="requests" rows="3" placeholder=" "></textarea>
+        <label for="requests">Special Requests (optional)</label>
+      </div>
+
+      <div class="reveal" style="margin-top: 8px;">
+        <button type="submit" id="booking-btn" class="btn btn-gold" style="width:100%; justify-content:center; padding: 18px; font-size: 0.9rem;">
+          <span class="btn-text">Confirm Booking →</span>
+          <div class="btn-spinner"></div>
+        </button>
+        <p style="font-size:0.78rem; color:var(--muted); text-align:center; margin-top:12px;">
+           Your data is secure. No payment required at this stage.
+        </p>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="booking-summary">
+    <div class="summary-card reveal">
+      <h3 class="summary-title">Booking Summary</h3>
+
+      <div class="summary-row">
+        <span class="summary-row-label">Destination</span>
+        <span class="summary-row-value" id="summary-dest">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-row-label">Departure Date</span>
+        <span class="summary-row-value" id="summary-date">—</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-row-label">Package</span>
+        <span class="summary-row-value" id="summary-pkg">Summer Escape</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-row-label">Travellers</span>
+        <span class="summary-row-value" id="summary-guests">2 Travellers</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-row-label">Includes</span>
+        <span class="summary-row-value" style="font-size:0.8rem;">Flights · Hotel · Transfers</span>
+      </div>
+
+      <div class="summary-total">
+        <span class="summary-total-label">Estimated Total</span>
+        <span class="summary-total-price" id="summary-total">$2,598</span>
+      </div>
+
+      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--muted);">
+           Free cancellation within 48 hours
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--muted);">
+         Best price guarantee
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--muted);">
+         24/7 concierge support
+        </div>
+      </div>
+    </div>
+
+    <div class="glass-card reveal" style="margin-top:20px; overflow:hidden; border-radius: var(--radius);">
+      <img id="dest-preview"
+        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop"
+        alt="Selected destination"
+        style="width:100%; height:200px; object-fit:cover; display:block; transition: opacity 0.4s ease;"
+      />
+      <div style="padding:16px 20px;">
+        <p style="font-size:0.8rem; color:var(--muted); line-height:1.5;">
+          Your journey awaits. Complete the form to secure your dates.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom" style="padding: 24px 5%;">
+    <p class="footer-copy">© 2025 Holidae. All rights reserved.</p>
+    <div>
+      <a href="index.html" class="form-link" style="margin-right:20px;">Home</a>
+      <a href="packages.html" class="form-link">Packages</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

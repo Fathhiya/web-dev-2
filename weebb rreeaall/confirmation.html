@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holidae — Booking Confirmed!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="confirmation">
+
+
+<div id="loader">
+  <div class="loader-logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </div>
+  <div class="loader-bar"></div>
+</div>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </a>
+  <div class="header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+  </div>
+</header>
+
+<div class="confirmation-page">
+  <div class="confirmation-bg"></div>
+
+  <div class="confirmation-card">
+
+    <div class="check-wrap">
+      <svg class="check-icon" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="20" stroke="rgba(110,201,169,0.2)" stroke-width="1" fill="none" />
+        <path class="check-path" d="M10 22 L18 30 L34 14" />
+      </svg>
+    </div>
+
+    <h1 class="confirmation-title">You're All Set!</h1>
+    <p class="confirmation-sub">
+      Your booking has been confirmed. A detailed itinerary will be sent to your email address within 24 hours.
+    </p>
+
+    <div class="booking-ref">
+      Booking Reference: <strong id="conf-ref">HLD-XXXXXX</strong>
+    </div>
+
+    <div class="booking-details">
+      <div class="detail-row">
+        <span class="detail-label">Traveller Name</span>
+        <span class="detail-value" id="conf-name">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Destination</span>
+        <span class="detail-value" id="conf-dest">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Departure Date</span>
+        <span class="detail-value" id="conf-date">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Package</span>
+        <span class="detail-value" id="conf-pkg">—</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Travellers</span>
+        <span class="detail-value" id="conf-guests">—</span>
+      </div>
+      <div class="detail-row" style="border-bottom: none;">
+        <span class="detail-label">Total Amount</span>
+        <span class="detail-value" id="conf-total" style="color:var(--gold); font-family:var(--font-display); font-size:1.2rem;">—</span>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <a href="index.html" id="back-home-btn" class="btn btn-gold">
+        <span class="btn-text">← Back to Home</span>
+      </a>
+      <a href="packages.html" class="btn btn-outline">
+        <span class="btn-text">Browse More</span>
+      </a>
+    </div>
+
+    <div style="margin-top:36px; padding-top:28px; border-top: 1px solid var(--glass-border); display:flex; gap:24px; justify-content:center; text-align:center; flex-wrap:wrap;">
+      <div style="flex:1; min-width:100px;">
+        <div style="font-size:1.4rem; margin-bottom:8px;"></div>
+        <p style="font-size:0.78rem; color:var(--muted); line-height:1.5;">Check your inbox for a confirmation email</p>
+      </div>
+      <div style="flex:1; min-width:100px;">
+        <div style="font-size:1.4rem; margin-bottom:8px;"></div>
+        <p style="font-size:0.78rem; color:var(--muted); line-height:1.5;">Your personalised itinerary arrives in 24 hrs</p>
+      </div>
+      <div style="flex:1; min-width:100px;">
+        <div style="font-size:1.4rem; margin-bottom:8px;"></div>
+        <p style="font-size:0.78rem; color:var(--muted); line-height:1.5;">24/7 concierge support at +1 800 555 0124</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom" style="padding: 24px 5%;">
+    <p class="footer-copy">© 2025 Holidae. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Twitter">TW</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

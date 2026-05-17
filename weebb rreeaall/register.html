@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holidae</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    .strength-bar {
+      height: 3px;
+      border-radius: 3px;
+      background: var(--glass-border);
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    .strength-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 3px;
+      transition: width 0.4s ease, background 0.4s ease;
+    }
+    .strength-label {
+      font-size: 0.72rem;
+      margin-top: 4px;
+      color: var(--muted);
+      transition: color 0.3s ease;
+    }
+
+    .match-indicator {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .match-indicator.show { opacity: 1; }
+
+    /* Perks list */
+    .perks {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .perks li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.4;
+    }
+    .perk-icon {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body data-page="register">
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     AUTH LAYOUT
+════════════════════════════════════════════ -->
+<div class="auth-page">
+
+  <!-- LEFT — Brand panel -->
+  <div class="auth-left">
+    <div class="auth-left-bg" style="background:
+      linear-gradient(to top, rgba(8,12,20,0.92) 0%, rgba(8,12,20,0.3) 60%),
+      url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=900') center/cover;">
+    </div>
+    <div class="auth-left-content">
+      <a href="index.html" class="logo">
+        <img src="/images and videos/logo.png" alt="Holidae logo">
+      </a>
+      <p class="auth-tagline">
+        Join thousands of<br>travellers living<br><em>extraordinary</em> lives.
+      </p>
+      <ul class="perks">
+        <li>
+          <span class="perk-icon"></span>
+          Access to 86+ exclusive destinations worldwide
+        </li>
+        <li>
+          <span class="perk-icon"></span>
+          Member-only pricing — save up to 30% on packages
+        </li>
+        <li>
+          <span class="perk-icon"></span>
+          Manage all your bookings in one dashboard
+        </li>
+        <li>
+          <span class="perk-icon"></span>
+          Earn loyalty points on every trip you take
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT — Form panel -->
+  <div class="auth-right">
+    <div class="auth-form-wrap">
+
+      <!-- Mobile logo -->
+      <a href="index.html" class="logo" style="display:block; margin-bottom:36px; font-size:1.4rem;">Holi<span>dae</span></a>
+
+      <h1 class="auth-title">Create account</h1>
+      <p class="auth-sub">
+        Already have one?
+        <a href="login.html" style="color:var(--gold); text-decoration:none; font-weight:500;">Sign in instead →</a>
+      </p>
+
+      <!-- Alert message -->
+      <div id="auth-alert" class="auth-alert" role="alert"></div>
+
+      <!-- Register Form -->
+      <form id="register-form" novalidate>
+
+        <!-- Full Name -->
+        <div class="form-field">
+          <input
+            type="text"
+            id="reg-name"
+            name="reg-name"
+            placeholder=" "
+            autocomplete="name"
+            required
+          />
+          <label for="reg-name">Full Name</label>
+          <p class="field-error"></p>
+        </div>
+
+        <!-- Email -->
+        <div class="form-field">
+          <input
+            type="email"
+            id="reg-email"
+            name="reg-email"
+            placeholder=" "
+            autocomplete="email"
+            required
+          />
+          <label for="reg-email">Email Address</label>
+          <p class="field-error"></p>
+        </div>
+
+        <!-- Password -->
+        <div class="form-field">
+          <input
+            type="password"
+            id="reg-password"
+            name="reg-password"
+            placeholder=" "
+            autocomplete="new-password"
+            required
+          />
+          <label for="reg-password">Password</label>
+          <p class="field-error"></p>
+          <!-- Strength indicator -->
+          <div class="strength-bar">
+            <div class="strength-fill" id="strength-fill"></div>
+          </div>
+          <p class="strength-label" id="strength-label">Enter a password</p>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-field" style="position:relative;">
+          <input
+            type="password"
+            id="reg-confirm"
+            name="reg-confirm"
+            placeholder=" "
+            autocomplete="new-password"
+            required
+          />
+          <label for="reg-confirm">Confirm Password</label>
+          <span class="match-indicator" id="match-indicator">✓</span>
+          <p class="field-error"></p>
+        </div>
+
+        <!-- Terms checkbox -->
+        <div style="margin-bottom: 24px;">
+          <label style="display:flex; align-items:flex-start; gap:10px; font-size:0.82rem; color:var(--muted); cursor:pointer; line-height:1.5;">
+            <input type="checkbox" id="terms" style="accent-color: var(--gold); margin-top:2px; flex-shrink:0;" required />
+            I agree to Holidae's
+            <a href="#" style="color:var(--gold); text-decoration:none; margin-left:4px;">Terms of Service</a>
+            &nbsp;and&nbsp;
+            <a href="#" style="color:var(--gold); text-decoration:none;">Privacy Policy</a>
+          </label>
+          <p class="field-error" id="terms-error" style="display:none; margin-top:4px;"></p>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" id="register-btn" class="btn btn-gold" style="width:100%; justify-content:center; padding:18px; font-size:0.9rem;">
+          <span class="btn-text">Create My Account →</span>
+          <div class="btn-spinner"></div>
+        </button>
+
+      </form>
+
+      <!-- Sign in link -->
+      <p style="margin-top: 24px; text-align:center; font-size:0.85rem; color:var(--muted);">
+        Already have an account?
+        <a href="login.html" style="color:var(--gold); font-weight:500; text-decoration:none;">Sign in</a>
+      </p>
+
+      <!-- Theme toggle -->
+      <div style="display:flex; align-items:center; gap:10px; margin-top:32px;">
+        <button class="theme-toggle" aria-label="Toggle theme"></button>
+        <span style="font-size:0.78rem; color:var(--muted);">Toggle theme</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Password strength meter
+  const pwdInput     = document.getElementById('reg-password');
+  const confirmInput = document.getElementById('reg-confirm');
+  const fillEl       = document.getElementById('strength-fill');
+  const labelEl      = document.getElementById('strength-label');
+  const matchEl      = document.getElementById('match-indicator');
+
+  pwdInput.addEventListener('input', () => {
+    const val = pwdInput.value;
+    let score = 0;
+    if (val.length >= 6)  score++;
+    if (val.length >= 10) score++;
+    if (/[A-Z]/.test(val)) score++;
+    if (/[0-9]/.test(val)) score++;
+    if (/[^A-Za-z0-9]/.test(val)) score++;
+
+    const levels = [
+      { pct: '0%',   color: 'transparent',    text: 'Enter a password' },
+      { pct: '25%',  color: '#e07070',         text: 'Too weak' },
+      { pct: '50%',  color: '#e0a870',         text: 'Could be stronger' },
+      { pct: '75%',  color: '#c9a96e',         text: 'Good password' },
+      { pct: '90%',  color: '#6ec9a9',         text: 'Strong password' },
+      { pct: '100%', color: '#6ec9a9',         text: 'Very strong! ' },
+    ];
+    const level = levels[Math.min(score, 5)];
+    fillEl.style.width      = level.pct;
+    fillEl.style.background = level.color;
+    labelEl.textContent     = level.text;
+    labelEl.style.color     = level.color === 'transparent' ? 'var(--muted)' : level.color;
+
+    checkMatch();
+  });
+
+  confirmInput.addEventListener('input', checkMatch);
+
+  function checkMatch() {
+    const matches = confirmInput.value && confirmInput.value === pwdInput.value;
+    matchEl.classList.toggle('show', matches);
+    matchEl.style.color = '#6ec9a9';
+  }
+
+  // Terms validation
+  document.getElementById('register-form').addEventListener('submit', function(e) {
+    const terms = document.getElementById('terms');
+    const termsErr = document.getElementById('terms-error');
+    if (!terms.checked) {
+      termsErr.textContent = 'You must accept the terms to continue.';
+      termsErr.style.display = 'block';
+      termsErr.style.color = 'var(--error)';
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    } else {
+      termsErr.style.display = 'none';
+    }
+  }, true); 
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holidae — Sign In</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="login">
+
+<div id="loader">
+  <div class="loader-logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </div>
+  <div class="loader-bar"></div>
+</div>
+
+<div class="auth-page">
+
+  <div class="auth-left">
+    <div class="auth-left-bg"></div>
+    <div class="auth-left-content">
+      <p class="auth-tagline">
+        The world is vast.<br>Let us be your<br><em>guide through it.</em>
+      </p>
+    </div>
+  </div>
+<header>
+  <a href="index.html" class="logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </a>
+</header>
+
+  <div class="auth-right">
+    <div class="auth-form-wrap">
+      <h1 class="auth-title">Welcome back</h1>
+      <p class="auth-sub">Sign in to access your bookings and explore packages.</p>
+
+      <div id="auth-alert" class="auth-alert" role="alert"></div>
+
+      <form id="login-form" novalidate>
+
+        <div class="form-field">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder=" "
+            autocomplete="email"
+            required
+          />
+          <label for="email">Email Address</label>
+          <p class="field-error" id="email-error"></p>
+        </div>
+
+        <div class="form-field">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder=" "
+            autocomplete="current-password"
+            required
+          />
+          <label for="password">Password</label>
+          <p class="field-error" id="password-error"></p>
+        </div>
+
+        <div class="form-footer-links" style="margin-bottom: 24px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:var(--muted); cursor:pointer;">
+            <input type="checkbox" style="accent-color: var(--gold);" /> Remember me
+          </label>
+          <a href="#" class="form-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" id="login-btn" class="btn btn-gold" style="width:100%; justify-content:center;">
+          <span class="btn-text">Sign In</span>
+          <div class="btn-spinner"></div>
+        </button>
+
+      </form>
+
+      <p style="margin-top: 24px; text-align:center; font-size:0.85rem; color:var(--muted);">
+        New to Holidae?
+        <a href="register.html" class="form-link" style="color:var(--gold); font-weight:500;">Create an account →</a>
+      </p>
+
+      <div class="demo-hint">
+        <strong>Demo Credentials:</strong><br />
+        Email: <strong>guest@holidae.com</strong><br />
+        Password: <strong>holiday123</strong>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px; margin-top:32px;">
+        <button class="theme-toggle" aria-label="Toggle theme"></button>
+        <span style="font-size:0.78rem; color:var(--muted);">Toggle theme</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

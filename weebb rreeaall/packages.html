@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holidae — Packages</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="packages">
+
+<div id="loader">
+  <div class="loader-logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </div>
+  <div class="loader-bar"></div>
+</div>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="/images and videos/logo.png" alt="Holidae logo">
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="packages.html" class="active">Packages</a>
+    <a href="booking.html">Book Now</a>
+    <a href="login.html">Sign In</a>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+    <a href="booking.html" class="btn btn-gold btn-sm"><span class="btn-text">Book Now</span></a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="packages.html">Packages</a>
+  <a href="booking.html">Book Now</a>
+  <a href="login.html">Sign In</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div style="position:relative; z-index:1; width:100%;">
+    <div class="section-label" style="opacity:0; animation: fadeUp 0.8s ease 0.5s forwards;">Our Packages</div>
+    <h1 class="section-title" style="opacity:0; animation: fadeUp 0.8s ease 0.7s forwards; font-size: clamp(3rem, 7vw, 5.5rem);">
+      Curated <em>Journeys</em><br>for Every Soul
+    </h1>
+    <p class="section-sub" style="opacity:0; animation: fadeUp 0.8s ease 0.9s forwards;">
+      Three collections. Endless possibilities. Each package designed to deliver an unforgettable experience.
+    </p>
+  </div>
+</section>
+
+<section style="padding-top: 60px;">
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Packages</button>
+    <button class="filter-btn" data-filter="summer"> Summer</button>
+    <button class="filter-btn" data-filter="winter"> Winter</button>
+    <button class="filter-btn" data-filter="adventure"> Adventure</button>
+  </div>
+
+  <div class="packages-grid">
+<!--summer-->
+    <article class="pkg-card" data-category="summer">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/rome.jpg" alt="turkey" loading="lazy" />
+        <span class="pkg-badge badge-summer"> Summer</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Historic trip</p>
+        <h2 class="pkg-name">Rome carved in time</h2>
+        <p class="pkg-desc">Stay near Rome’s iconic ancient amphitheater and experience history just steps away</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>3,200</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 7 Nights</span>
+          <span class="pkg-feature"> All-Inclusive</span>
+          <span class="pkg-feature"> cycling</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card" data-category="summer">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/paris.jpg" alt="Santorini" loading="lazy" />
+        <span class="pkg-badge badge-summer"> Summer</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">City of romance</p>
+        <h2 class="pkg-name">Paris-Eiffel tower</h2>
+        <p class="pkg-desc">Sunlit streets, café-lined boulevards, and iconic landmarks wrapped in a vibrant summer glow</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>2,400</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 5 Nights</span>
+          <span class="pkg-feature"> Wine Tour</span>
+          <span class="pkg-feature"> Boat Trip</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card" data-category="summer">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/baallii.jpg" alt="Bali" loading="lazy" />
+        <span class="pkg-badge badge-summer"> Summer</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Tropical Retreat</p>
+        <h2 class="pkg-name">Bali Sacred Journey</h2>
+        <p class="pkg-desc">Rice terraces, ancient temples, jungle hideaways, and spa rituals that restore body and soul.</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>1,800</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 8 Nights</span>
+          <span class="pkg-feature"> Spa Day</span>
+          <span class="pkg-feature"> Scooter Tour</span>
+        </div>
+      </div>
+    </article>
+<!--winter-->
+    <article class="pkg-card" data-category="winter">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/iceland2.jpg" alt="Iceland" loading="lazy" />
+        <span class="pkg-badge badge-winter"> Winter</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Arctic Magic</p>
+        <h2 class="pkg-name">Iceland Northern Lights</h2>
+        <p class="pkg-desc">Chase the Aurora Borealis across volcanic landscapes, geothermal pools, and black sand beaches.</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>2,900</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 6 Nights</span>
+          <span class="pkg-feature"> Blue Lagoon</span>
+          <span class="pkg-feature"> Aurora Hunt</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card" data-category="winter">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/norway.jpg" alt="Swiss Alps" loading="lazy" />
+        <span class="pkg-badge badge-winter"> Winter</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Frozen Aurora</p>
+        <h2 class="pkg-name">Gateway to the Arctic</h2>
+        <p class="pkg-desc">Cosy mountain chalets, world-class ski runs, chocolate fondue evenings, and breathtaking powder.</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>3,500</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 7 Nights</span>
+          <span class="pkg-feature"> Ski Pass</span>
+          <span class="pkg-feature"> Spa</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card" data-category="winter">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/lapland.jpg" alt="Lapland" loading="lazy" />
+        <span class="pkg-badge badge-winter"> Winter</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Festive Magic</p>
+        <h2 class="pkg-name">Finnish Lapland Christmas</h2>
+        <p class="pkg-desc">Dog sledding, reindeer safaris, glass igloo accommodation, and the magic of the Arctic wilderness.</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>2,650</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 5 Nights</span>
+          <span class="pkg-feature"> Reindeer</span>
+          <span class="pkg-feature"> Dog Sled</span>
+        </div>
+      </div>
+    </article>
+<!--adventure-->
+    <article class="pkg-card" data-category="adventure">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/turkey.jpg" alt="Patagonia" loading="lazy" />
+        <span class="pkg-badge badge-adventure"> Adventure</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Balloon Dawn</p>
+        <h2 class="pkg-name">Hot Air Cappadocia</h2>
+        <p class="pkg-desc">Balloon Cappadocia, float above ancient valleys, and watch sunrise paint the earth gold</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>3,100</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 10 Nights</span>
+          <span class="pkg-feature"> hot air ballon </span>
+          <span class="pkg-feature"> Camping</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card" data-category="adventure">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/dubai.jpg" alt="Sahara" loading="lazy" />
+        <span class="pkg-badge badge-adventure"> Adventure</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Desert safari</p>
+        <h2 class="pkg-name">Dubai Camel Caravan</h2>
+        <p class="pkg-desc">Sleep under a billion stars in luxury desert camps, ride camels at dawn, and discover ancient Bedouin culture.</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>2,200</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 6 Nights</span>
+          <span class="pkg-feature"> Camel Trek</span>
+          <span class="pkg-feature"> Stargazing</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="pkg-card" data-category="adventure">
+      <div class="pkg-img-wrap">
+        <img src="/images and videos/nepal.jpg" alt="Nepal" loading="lazy" />
+        <span class="pkg-badge badge-adventure"> Adventure</span>
+      </div>
+      <div class="pkg-body">
+        <p class="pkg-label">Himalayan Spirit</p>
+        <h2 class="pkg-name">Nepal Everest Base Camp</h2>
+        <p class="pkg-desc">Journey through rhododendron forests, Buddhist monasteries, and the roof of the world on this epic trek.</p>
+        <div class="pkg-meta">
+          <div>
+            <p class="pkg-price-label">Per Person</p>
+            <p class="pkg-price"><sup>$</sup>3,800</p>
+          </div>
+          <button class="btn btn-gold btn-sm pkg-book-btn"><span class="btn-text">Book Now</span></button>
+        </div>
+        <div class="pkg-features">
+          <span class="pkg-feature"> Flights</span>
+          <span class="pkg-feature"> 14 Nights</span>
+          <span class="pkg-feature"> Guide</span>
+          <span class="pkg-feature"> Insurance</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="cta-banner">
+  <div class="section-label reveal">Ready to Go?</div>
+  <h2 class="section-title reveal reveal-delay-1" style="text-align:center; max-width:540px; margin:0 auto 24px;">
+    Can't decide? Let Us <em>Choose</em> For You
+  </h2>
+  <p class="section-sub reveal reveal-delay-2" style="text-align:center; margin:0 auto 40px;">
+    Share your dream and our experts will craft the perfect itinerary.
+  </p>
+  <div class="reveal reveal-delay-3" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+    <a href="booking.html" class="btn btn-gold">Start Booking</a>
+    <a href="login.html" class="btn btn-outline">Sign In</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">Holi<span>dae</span></a>
+      <p>Premium travel experiences organized for those who believe the journey matters as much as the destination.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+        <li><a href="login.html">Sign In</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:hello@holidae.com">hello@holidae.com</a></li>
+        <li><a href="#">Help Centre</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
